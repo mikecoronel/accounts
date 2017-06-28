@@ -34,6 +34,7 @@ public class Api {
 	
 	@RequestMapping("/customers/pesel/{pesel}")
 	public Customer findByPesel(@PathVariable("pesel") String pesel) {
+		logger.info("Here!!!");
 		logger.info(String.format("Customer.findByPesel(%s)", pesel));
 		return customers.stream().filter(it -> it.getPesel().equals(pesel)).findFirst().get();	
 	}
